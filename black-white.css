@@ -1,0 +1,296 @@
+/* @theme marp-black-white */
+
+@import "default";
+
+/* https://github.com/orioncactus/pretendard */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+/* https://github.com/JetBrains/JetBrainsMono */
+@import url("https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap");
+/* https://github.com/dtinth/comic-mono-font - Second Code Font */
+@import url("https://cdn.jsdelivr.net/npm/comic-mono@0.0.1/index.css");
+
+@import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+
+/* https://marpit.marp.app/theme-css?id=root-pseudo-class-selector */
+:root {
+  /* font-family: "Pretendard"
+  font-family: "Candara"; */
+  font-family: 'GmarketSans';
+  font-size: 27px;
+}
+
+h1 {
+  color: black;
+  font-size:45px;
+  font-weight: 800;
+}
+
+/* 필요 이상으로 벌어지는 부분 처리 */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+section:not(.lead) {
+  padding: 1rem;
+  justify-content: flex-start;
+}
+
+ul ul {
+  font-size: 0.95em; /* default */
+}
+
+section::after {
+  /* https://github.com/marp-team/marpit/issues/271 */
+  content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+  text-align: right;
+  top: 95.1%;
+  width: 100%;
+  left: -0.75em;
+  color: white;
+  font-size: 20px;
+}
+
+code {
+  font-family: 'Jetbrains Mono';
+  font-size: 0.8rem;
+  letter-spacing: -1px;
+}
+
+header {
+  background-color: #3550d8; /* 262626, 2c2c2c, 1f1f1f, 333333 */
+  color: white;
+  padding: 5px;
+  text-align: center;
+  width:50%;
+  top:94.4%;
+  left:50.7%;
+  font-size: 20px;
+}
+
+
+footer {
+  background-color: #6277e0;
+  color: white;
+  padding: 5px; /* 여백 설정 */
+  text-align: center; /* 텍스트 정렬 */
+  bottom: 0; /* 아래로 더 내림 */
+  width: 50%; /* header와 반씩 나누기 위함 */
+  left: 0; /* 왼쪽 여백 제거 */
+  font-size: 20px;
+}
+
+blockquote {
+  max-width: 92.5%;
+  border-top: 0.1em solid black;
+  border-left: none;
+  padding-top: 4px;
+  font-size: 60%;
+  position: absolute;
+  bottom: 50px;
+  color:black;
+}
+
+/* https://github.com/kaisugi/marp-theme-academic/blob/main/themes/academic.css#L91 */
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+
+img[alt~="left"] {
+  float: left;
+}
+
+img[alt~="right"] {
+  float: right;
+}
+
+/* https://github.com/marp-team/marpit/issues/178#issuecomment-511106762 */
+.table_clean tr,
+.table_clean td,
+.table_clean th {
+  border: none!important;
+  background-color: white!important;
+}
+
+/* Customize By dong */
+/* section.split {
+  overflow: visible;
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-template-rows: 100px auto;
+  grid-template-areas: 
+      "slideheading slideheading"
+      "leftpanel rightpanel";
+}
+/* debug /
+section.split h3, 
+section.split .ldiv, 
+section.split .rdiv { border: 1.5pt dashed dimgray; }
+section.split h3 {
+  grid-area: slideheading;
+  font-size: 50px;
+}
+section.split .ldiv { grid-area: leftpanel; }
+section.split .rdiv { grid-area: rightpanel; } */
+
+/* https://github.com/marp-team/marpit/issues/137#issuecomment-696261979 */
+/* div.twocols {
+  margin-top: 35px;
+  column-count: 2;
+}
+div.twocols p:first-child,
+div.twocols h1:first-child,
+div.twocols h2:first-child,
+div.twocols ul:first-child,
+div.twocols ul li:first-child,
+div.twocols ul li p:first-child {
+  margin-top: 0 !important;
+}
+div.twocols p.break {
+  break-before: column;
+  margin-top: 0;
+}
+/* three cols */
+/* div.threecols {
+  margin-top: 35px;
+  column-count: 3;
+}
+div.threecols p:first-child,
+div.threecols h1:first-child,
+div.threecols h2:first-child,
+div.threecols ul:first-child,
+div.threecols ul li:first-child,
+div.threecols ul li p:first-child {
+  margin-top: 0 !important;
+}
+div.threecols p.break {
+  break-before: column;
+  margin-top: 0;
+}  */
+
+/* top level */
+div.colwrap {
+  background-color: inherit;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+}
+div.colwrap div h1:first-child, div.colwrap div h2:first-child {
+  margin-top: 40px !important;
+}
+div.colwrap div.left, div.colwrap div.right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 70px 35px 70px 70px;
+}
+div.colwrap div.left {
+  right: 50%;
+  left: 0;
+}
+div.colwrap div.right {
+  left: 45%;
+  right: 0;
+}
+
+/**/
+div.colwrap2 {
+  background-color: inherit;
+  color: inherit;
+  width: 100%;
+  height: 58%;
+}
+div.colwrap2 div h1:first-child, div.colwrap2 div h2:first-child {
+  margin-top: 40px !important;
+}
+div.colwrap2 div.left, div.colwrap2 div.right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 70px 35px 70px 70px;
+}
+div.colwrap2 div.left {
+  right: 50%;
+  left: 0;
+}
+div.colwrap2 div.right {
+  left: 36%;
+  right: 0;
+}
+
+/**/
+div.colwrap3 {
+  background-color: inherit;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+}
+div.colwrap3 div h1:first-child, div.colwrap3 div h2:first-child {
+  margin-top: 40px !important;
+}
+div.colwrap3 div.left, div.colwrap3 div.right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 70px 35px 70px 70px;
+}
+div.colwrap3 div.left {
+  right: 40%;
+  left: 0;
+}
+div.colwrap3 div.right {
+  left: 50%;
+  right: 0;
+}
+
+/**/
+div.colwrap4 {
+  background-color: inherit;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+}
+div.colwrap4 div h1:first-child, div.colwrap4 div h2:first-child {
+  margin-top: 40px !important;
+}
+div.colwrap4 div.left, div.colwrap4 div.right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 70px 35px 70px 70px;
+}
+div.colwrap4 div.left {
+  right: 50%;
+  left: 0;
+}
+div.colwrap4 div.right {
+  left: 40%;
+  right: 0;
+}
+
+/**/
+div.colwrap5 {
+  background-color: inherit;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+}
+div.colwrap5 div h1:first-child, div.colwrap5 div h2:first-child {
+  margin-top: 40px !important;
+}
+div.colwrap5 div.left, div.colwrap5 div.right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 70px 35px 70px 70px;
+}
+div.colwrap5 div.left {
+  right: 40%;
+  left: 0;
+}
+div.colwrap5 div.right {
+  left: 50%;
+  right: 0;
+}
